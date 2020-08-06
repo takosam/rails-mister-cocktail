@@ -1,0 +1,11 @@
+<h1>Doses#new</h1>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.input :description %>
+<%= f.association :ingredient, collection: Ingredient.all, prompt: "Choose an ingredient" %>
+<%= f.submit :add  %>
+
+<%= link_to "back to List", cocktails_path %>
+
+<%= link_to "back to your cocktail", cocktail_path(@cocktail) %>
+<% end %>
+
